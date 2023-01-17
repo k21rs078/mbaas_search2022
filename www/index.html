@@ -83,6 +83,40 @@
                     showResults(results);
                 })
         }
+
+        function searchAttack() {
+            let attack = parseInt($("#attack").val());
+            let TestDataClass = ncmb.DataStore(db);
+            TestDataClass
+                .equalTo("attack", attack)
+                .fetchAll()
+                .then(function(results) {
+                    showResults(results);
+                })
+        }
+
+        function searchAttackLT() {
+            let attack = parseInt($("#attack").val());
+            let TestDataClass = ncmb.DataStore(db);
+            TestDataClass
+                .lessThan("attack", attack)
+                .fetchAll()
+                .then(function(results) {
+                    showResults(results);
+                })
+        }
+
+        function searchAttackGT() {
+            let attack = parseInt($("#attack").val(), 10);
+            let TestDataClass = ncmb.DataStore(db);
+            TestDataClass
+                .greaterThan("attack", attack)
+                .fetchAll()
+                .then(function(results) {
+                    showResults(results);
+                })
+        }
+
     </script>
 </head>
 
