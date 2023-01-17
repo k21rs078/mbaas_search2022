@@ -34,11 +34,11 @@
                 })
         }
 
-        function searchLevel() {
-            let level = parseInt($("#level").val());
+        function searchHP() {
+            let hp = parseInt($("#hp").val());
             let TestDataClass = ncmb.DataStore(db);
             TestDataClass
-                .equalTo("level", level)
+                .equalTo("hp", hp)
                 .fetchAll()
                 .then(function(results) {
                     showResults(results);
@@ -62,22 +62,22 @@
             $("#message").html(msg);
         }
 
-        function searchLevelLT() {
-            let level = parseInt($("#level").val());
+        function searchHPLT() {
+            let hp = parseInt($("#hp").val());
             let TestDataClass = ncmb.DataStore(db);
             TestDataClass
-                .lessThan("level", level)
+                .lessThan("hp", hp)
                 .fetchAll()
                 .then(function(results) {
                     showResults(results);
                 })
         }
 
-        function searchLevelGT() {
-            let level = parseInt($("#level").val(), 10);
+        function searchHPGT() {
+            let hp = parseInt($("#hp").val(), 10);
             let TestDataClass = ncmb.DataStore(db);
             TestDataClass
-                .greaterThan("level", level)
+                .greaterThan("hp", hp)
                 .fetchAll()
                 .then(function(results) {
                     showResults(results);
@@ -93,16 +93,16 @@
         <input id="name" type="text" placeholder="monster name">
     </div>
     <div>
-        <label for="level">level:</label>
-        <input id="level" type="number" placeholder="monster level">
+        <label for="hp">hp:</label>
+        <input id="hp" type="number" placeholder="monster hp">
     </div>
     <div id="button">
         <button class="btn" onclick="fetchAll()">Fetch All</button>
         <button class="btn" onclick="searchName()">Name</button>
         <br>
-        <button class="btn" onclick="searchLevelLT()">Level &lt;</button>
-        <button class="btn" onclick="searchLevel()">Level</button>
-        <button class="btn" onclick="searchLevelGT()">Level &gt;</button>
+        <button class="btn" onclick="searchHPLT()">HP &lt;</button>
+        <button class="btn" onclick="searchHP()">HP</button>
+        <button class="btn" onclick="searchHPGT()">HP &gt;</button>
 
     </div>
     <div id="message">message area</div>
