@@ -54,6 +54,17 @@ input {
   background-color: yellow;
 }
 
+.btn4 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 15pt;
+  height: 4ex;
+  width: 6em;
+  border-radius: 10px;
+  color: white;
+  background-color: green;
+}
+
 #message {
   border-style: solid;
   border-color: grey;
