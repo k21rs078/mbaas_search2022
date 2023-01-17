@@ -117,6 +117,39 @@
                 })
         }
 
+        function searchDefence() {
+            let defence = parseInt($("#defence").val());
+            let TestDataClass = ncmb.DataStore(db);
+            TestDataClass
+                .equalTo("defence", defence)
+                .fetchAll()
+                .then(function(results) {
+                    showResults(results);
+                })
+        }
+
+        function searchDefenceLT() {
+            let defence = parseInt($("#defence").val());
+            let TestDataClass = ncmb.DataStore(db);
+            TestDataClass
+                .lessThan("defence", defence)
+                .fetchAll()
+                .then(function(results) {
+                    showResults(results);
+                })
+        }
+
+        function searchDefenceGT() {
+            let defence = parseInt($("#defence").val(), 10);
+            let TestDataClass = ncmb.DataStore(db);
+            TestDataClass
+                .greaterThan("defence", defence)
+                .fetchAll()
+                .then(function(results) {
+                    showResults(results);
+                })
+        }
+
     </script>
 </head>
 
